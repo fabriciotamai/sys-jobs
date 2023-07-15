@@ -1,4 +1,4 @@
-import { expect, test, describe, it } from "vitest";
+import { expect, test, describe, it, beforeEach } from "vitest";
 
 import { PrismaUsersRepository } from "@/repositories/prisma/prisma-users-repository";
 import { compare } from "bcryptjs";
@@ -6,12 +6,22 @@ import { RegisterUseCase } from "./register";
 import { InMemoryUsersRepository } from "@/repositories/in-memory/in-memory-users-repository";
 import { UserAlreadyExistsError } from "./errors/user-already-exists-error";
 
-describe("Register Use Case", () => {
-  it("should be able to register", async () => {
-    const usersRepository = new InMemoryUsersRepository();
-    const registerUseCase = new RegisterUseCase(usersRepository);
 
-    const { user } = await registerUseCase.execute({
+let usersRepository : InMemoryUsersRepository
+let sut: RegisterUseCase 
+
+
+
+describe("Register Use Case", () => {
+  beforeEach(() => {
+  usersRepository = new InMemoryUsersRepository();
+  sut = new RegisterUseCase(usersRepository);
+
+    })
+  it("should be able to register", async () => {
+
+
+    const { user } = await sut.execute({
       name: "Fabricio Tamai",
       email: "fabriciotamai2@gmail.com",
       password: "123456",
@@ -19,20 +29,19 @@ describe("Register Use Case", () => {
 
     expect(user.id).toEqual(expect.any(String));
   });
-  it.skip("should hash   user password upon registration", async () => {
-    const usersRepository = new InMemoryUsersRepository();
-    const registerUseCase = new RegisterUseCase(usersRepository);
+  it("should hash   user password upon registration", async () => {
+  
 
     const email = "fabriciotamai@gmail.com";
 
-    await registerUseCase.execute({
+    await sut.execute({
       name: "Fabricio Tamai",
       email,
       password: "123456",
     });
 
     await expect(() =>
-      registerUseCase.execute({
+    sut.execute({
         name: "Fabricio Tamai",
         email,
         password: "123456",
