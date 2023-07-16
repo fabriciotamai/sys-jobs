@@ -1,6 +1,6 @@
 # App
 
-GymPass style app.
+Gojobs style app.
 
 ## RFs (Requisitos funcionais)
 
