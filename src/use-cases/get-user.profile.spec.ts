@@ -28,13 +28,13 @@ describe("get User Profile Use Case", () => {
     })
 
     const { user } = await sut.execute({
-      userId:createUser?.id
+      userId:createUser.id
    
   
     });
 
-    expect(user?.id).toEqual(expect.any(String))
-    expect(user?.name).toEqual('Admin teste')
+    expect(user.id).toEqual(expect.any(String))
+    expect(user.name).toEqual('Admin teste')
 
   });
   it("should not be able to get user profile wrong id", async () => {
