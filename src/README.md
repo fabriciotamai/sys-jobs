@@ -4,8 +4,8 @@ Gojobs style app.
 
 ## RFs (Requisitos funcionais)
 
-- [ ] Deve ser possivel se cadastrar;
-- [ ] Deve ser possivel se autenticar;
+- [x] Deve ser possivel se cadastrar;
+- [x] Deve ser possivel se autenticar;
 - [ ] Deve ser possivel obter perfil de um usuário logado;
 - [ ] Deve ser possivel obter numero de check-ins realizado pelo usuário logado;
 - [ ] Deve ser possivel o usuário buscar academias próximas;
