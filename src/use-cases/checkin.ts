@@ -13,14 +13,12 @@ interface CheckInUseCaseResponse {
   checkIn:Checkin
 }
 
-
-
-export class CheckinUseCase {
+export class CheckInUseCase {
   constructor(
     private usersRepository:UsersRepository ){}
 
-    async execute ({email, password}: CheckinUseCaseRequest) : Promise<CheckInUseCaseResponse>{
-      const user = await this.usersRepository.findByEmail(email);
+    async execute ({userId, jobId}: CheckInUseCaseResponse) : Promise<CheckInUseCaseResponse>{
+      const Checkin = await this.usersRepository.findByEmail(email);
 
       if(!user){
         throw new InvalidCredentialsError()

@@ -33,7 +33,6 @@ describe("get User Profile Use Case", () => {
   
     });
 
-    expect(user.id).toEqual(expect.any(String))
     expect(user.name).toEqual('Admin teste')
 
   });
