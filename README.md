@@ -1,6 +1,6 @@
 # App
 
-GymPass style app.
+JobsGo style app.
 
 ## RFs (Requisitos funcionais)
 
@@ -20,10 +20,9 @@ GymPass style app.
 
 - O usuário não pode se cadastrar com emai-l duplicado;
 - O usuário não pode fazer 2 check-in no mesmo dia;
-- O usuário não pode fazer check-in se 100m de uma academia;
+- O usuário não pode fazer check-in se 100m de uma Obra;
 - O check-in só pode ser validado até 20 minutos após criado;
-- O checkin só pode ser validado por administradores;
-- A academia só pode ser cadastrada por administradores;
+
 
 ## RNFs (Requisitos não-funcionais)
 
